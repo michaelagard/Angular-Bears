@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BearsComponent } from './bears/bears.component';
 import { BearDetailComponent } from './bear-detail/bear-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MessagesComponent } from './messages/messages.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
