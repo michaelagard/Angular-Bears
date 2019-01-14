@@ -17,7 +17,7 @@ export class BearService {
   }
 
   getBear(id: number): Observable<Bear> {
-    this.messageService.add('BearService: fetched bear id=${id}');
+    this.messageService.add(`BearService: fetched bear id=${id}`);
     return of(BEARS.find(bear => bear.id === id));
   }
 }
