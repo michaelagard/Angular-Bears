@@ -1,6 +1,6 @@
 <h3>Top Bears</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let bear of bears" class="col-1-4">
+  <a *ngFor="let bear of bears" class="col-1-4" routerLink="/detail/{{bear.id}}">
     <div class="module bear">
       <h4>{{bear.name}}</h4>
     </div>
