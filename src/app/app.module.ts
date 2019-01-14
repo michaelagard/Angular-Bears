@@ -6,7 +6,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BearDetailComponent } from './bear-detail/bear-detail.component';
 import { BearsComponent } from './bears/bears.component';
 import { MessagesComponent } from './messages/messages.component';
-import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 @NgModule({
@@ -14,7 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule
   ],
   declarations: [
     AppComponent,
