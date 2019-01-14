@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Bear from '../bear';
-import { BEARS } from '../mock-bears'
+import { BearService } from '../bear.service'
 
 @Component({
   selector: 'app-bears',
@@ -8,18 +8,24 @@ import { BEARS } from '../mock-bears'
   styleUrls: ['./bears.component.css']
 })
 export class BearsComponent implements OnInit {
-  bears = BEARS;
-  bear: Bear = {
-    id: 1,
-    name: "Golden Bear"
-  };
+
   selectedBear: Bear;
+
+  bears: Bear[];
+
+  constructor(private bearService: BearService) { }
+
+  ngOnInit() {
+    this.getBears();
+  }
+
   onSelect(bear: Bear): void {
     this.selectedBear = bear;
   }
-  constructor() { }
 
-  ngOnInit() {
+  // Observable.subscribe() returns an Observable<Bear[]>
+  getBears(): void {
+    this.bearService.getBears()
+      .subscribe(bears => this.bears = bears);
   }
-
 }
