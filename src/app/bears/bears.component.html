@@ -1,0 +1,11 @@
+<h2>Collective Bears</h2>
+<ul class="bears">
+  <li *ngFor="let hero of heroes">
+    <span class="badge">{{bear.id}}</span> {{bear.name}}
+  </li>
+</ul>
+<div>
+  <label>name:
+    <input [(ngModel)]="bear.name" placeholder="name">
+  </label>
+</div>
