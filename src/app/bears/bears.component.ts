@@ -13,7 +13,10 @@ export class BearsComponent implements OnInit {
     id: 1,
     name: "Golden Bear"
   };
-
+  selectedBear: Bear;
+  onSelect(bear: Bear): void {
+    this.selectedBear = bear;
+  }
   constructor() { }
 
   ngOnInit() {
