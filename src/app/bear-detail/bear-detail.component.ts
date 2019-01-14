@@ -1,5 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Bear } from '../bear'
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { Bear } from '../bear';
+import { BearService } from '../bear.service';
 
 @Component({
   selector: 'app-bear-detail',
@@ -8,11 +12,23 @@ import { Bear } from '../bear'
 })
 
 export class BearDetailComponent implements OnInit {
-  @Input() bear: Bear;
+  bear: Bear;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private bearService: BearService,
+    private location: Location
+  ) { }
 
   ngOnInit() {
+    this.getBear();
+  }
+  getBear(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.bearService.getBear(id).subscribe(bear => this.bear = bear);
   }
 
+  goBack(): void {
+    this.location.back();
+  }
 }
