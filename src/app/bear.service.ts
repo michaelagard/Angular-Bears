@@ -6,9 +6,7 @@ import { Bear } from './bear';
 import { BEARS } from './mock-bears';
 import { MessageService } from './message.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class BearService {
 
   constructor(private messageService: MessageService) { }
@@ -16,5 +14,10 @@ export class BearService {
   getBears(): Observable<Bear[]> {
     this.messageService.add('BearService: fetched bears')
     return of(BEARS);
+  }
+
+  getBear(id: number): Observable<Bear> {
+    this.messageService.add('BearService: fetched bear id=${id}');
+    return of(BEARS.find(bear => bear.id === id));
   }
 }
