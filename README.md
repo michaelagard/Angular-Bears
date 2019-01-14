@@ -1,6 +1,8 @@
-# AngularTourOfHeroes
+# Angular: Bears From Around the Multiverse
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+
+The application lists several bears from the trading card game, Magic the Gathering.
 
 ## Development server
 
