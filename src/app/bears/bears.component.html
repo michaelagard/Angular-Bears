@@ -1,10 +1,9 @@
 <h2>Collective Bears</h2>
 
 <ul class="bears">
-  <li *ngFor="let bear of bears" [class.selected]="bear === selectedBear" (click)="onSelect(bear)">
-
-    <span class="badge">{{bear.id}}</span> {{bear.name}}
+  <li *ngFor="let bear of bears">
+    <a routerLink="/detail/{{bear:id}}">
+      <span class="badge">{{bear.id}}</span> {{bear.name}}
+    </a>
   </li>
 </ul>
-
-<app-bear-detail [bear]="selectedBear"></app-bear-detail>
